@@ -364,3 +364,30 @@ const [showModal, setShowModal] = useState(false);
 };
 
 export default DynamicStudentForm;
+
+
+import React from 'react';
+import DynamicStudentForm from './Components/DynamicStudentForm';
+// import DynamicStudentForm_updated from './Components/DynamicStudentForm_updated';
+import { Route, Routes } from 'react-router-dom';
+
+function App() {
+  const handleFormSubmit = (data) => {
+    console.log('Form submitted:', data);
+    alert('Form submitted successfully!');
+  };
+
+  return (
+    <div className="App">
+      {/* <h1>Student Registration</h1> */}
+      {/* <DynamicStudentForm onSubmit={handleFormSubmit} /> */}
+      
+      <Routes>
+            <Route path="/form" element={<DynamicStudentForm  onSubmit={handleFormSubmit} />} />
+            {/* <Route path="/form" element={<DynamicStudentForm_updated  onSubmit={handleFormSubmit} />} /> */}
+      </Routes>
+    </div>
+  );
+}
+
+export default App;
